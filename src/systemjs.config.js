@@ -25,7 +25,9 @@
 
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'ng2-handy-oauth':           'node_modules/ng2-handy-oauth/src/library/index.js',
+      'angular2-oauth2':           'node_modules/angular2-oauth2/oauth-service.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -34,7 +36,13 @@
       },
       rxjs: {
         defaultExtension: 'js'
-      }
+      },
+        'ng2-handy-oauth':{
+            defaultExtension: 'js'
+        },
+        'angular2-oauth2':{
+            defaultExtension: 'js'
+        }
     }
   });
 })(this);

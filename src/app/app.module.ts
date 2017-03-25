@@ -1,10 +1,14 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { routing, appRoutingProviders } from './app.router';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+
 
 import { AppComponent }  from './app.component';
 import { HomeComponent } from './component/home/home.component';
 import { ChatpageComponent } from './component/chatpage/chatpage.component';
+import { routing, appRoutingProviders } from './app.router';
+import { OAuthService } from 'angular2-oauth2/oauth-service';
 
 @NgModule({
   imports:      [ BrowserModule,
@@ -15,6 +19,10 @@ import { ChatpageComponent } from './component/chatpage/chatpage.component';
                   ChatpageComponent,
                 ],
   bootstrap:    [ AppComponent ],
-  providers:    [ appRoutingProviders]
+  providers:    [ appRoutingProviders,
+                  OAuthService,   // <-- Provider for OAuthService
+                  HttpModule,
+                  RouterModule
+  ]
 })
 export class AppModule { }
